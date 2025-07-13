@@ -1,0 +1,148 @@
+.form-cont{
+    margin-left: 100px;
+}
+.textarea-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .textarea {
+    width: 408px;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-top: 15px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFA725;
+    border: none;
+  }
+  .textarea::placeholder {
+    padding-left: 5px;
+    padding-top: 5px;
+    color: #01432a;
+  }
+  
+  .toggle-expand-inside {
+    position: absolute;
+    bottom: 10px;
+    right: 790px;
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+  .title{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #FFA725;
+    border: none;
+  }
+  .title::placeholder {
+    padding-left: 5px;
+    color: #01432a;
+  }
+  .share-btn button {
+     background-color: #FFA725;
+     margin-top: 100px;
+     border: none;
+     width: 405px;
+     height: 30px;
+     border-radius: 10px;
+     font-weight: bold;
+     color: #01432a;
+     letter-spacing: 5px;
+     font-size: 16px;
+
+  }
+
+  .create-container{
+    display: flex;
+  }
+.gif img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 20px;
+    margin-left: 200px;
+    border: none;
+}
+
+
+.video-upload{
+  display: none;
+}
+.icon-upload{
+  margin-left: 180px;
+  padding-top: 50px;
+  color: #01432a;
+  font-size: 30px;
+  margin-top: -48px;
+}
+.icon-container{
+  position: absolute;
+  width: 407px;
+  height: 60px;
+  background-color: #FFA725;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.video-txt{
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 3px;
+  color: #01432a;
+  text-align: center;
+  margin-top: -2px;
+}
+.video-prev {
+  position: relative;
+  top: -220px;
+  margin-left: 600px;
+}
+@media (max-width: 430px) {
+  .form-cont{
+    margin-top: 40px;
+    margin-left: 60px;
+  }
+  .icon-container{
+    width: 300px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .video-txt{
+    font-size: 12px;
+  }
+  .icon-upload{
+    margin-left: 140px;
+  }
+  .title{
+    width: 300px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 100px;
+  }
+  .textarea{
+    width: 305px;
+    
+  }
+  .share-btn{
+    width: 305px;
+    margin-top: 40px;
+  }
+   .share-btn button {
+      width: 305px;
+      height: 30px;
+   }
+
+}
+
+
+  

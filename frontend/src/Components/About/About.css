@@ -1,0 +1,140 @@
+.about-cont img {
+    width: 400px;
+    margin-left: 850px;
+    border-radius: 20px;
+    margin-top: -250px;
+}
+
+.about-txt{
+    margin-left: 230px;
+    margin-top: -30px;
+    color: #FFA725;
+}
+.who {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 22px;
+    color: #6A9C89;
+}
+.who-txt{
+    margin-left: 20px;
+    margin-top: 15px;
+    background-color: #C1D8C3;
+    width: 600px;
+    height: 160px;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+.why{
+    font-size: 22px;
+    margin-top: -120px;
+    margin-left: 30px;
+    color: #6A9C89;
+
+}
+.why-txt{
+    margin-left: 20px;
+    background-color: #C1D8C3;
+    width: 600px;
+    height: 160px;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+
+}
+.values-txt{
+    margin-left: 30px;
+    font-size: 22px;
+    color: #6A9C89;
+}
+.add-values{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+.value1{
+    width: 270px;
+    height: 140px;
+    background-color: #C1D8C3;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.value2{
+    width: 200px;
+    height: 140px;
+    background-color: #C1D8C3;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: 60px;
+}
+.value3{
+    width: 220px;
+    height: 140px;
+    background-color: #C1D8C3;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: 60px;
+}
+
+
+@media (max-width: 430px) {
+    .about-txt{
+        margin-top: 20px;
+        font-size: 18px;
+        margin-left: 16px;
+    }
+    .about-cont img {
+        display: none;
+    }
+    .why{
+        margin-top: 40px;
+    }
+    .who{
+        font-size: 18px;   
+    }
+    .who-mobile{
+        font-size: 16px;
+        width: 390px;
+        height: 150px;
+        background-color: #C1D8C3;
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin-left: 10px;
+    }
+    .who-txt{
+        display: none;
+    }
+    .why-txt{
+        display: none;
+    }
+    .why-mobile{
+        font-size: 16px;
+        width: 390px;
+        height: 150px;
+        background-color: #C1D8C3;
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin-left: 10px;
+    }
+    .add-values{
+        display: block;
+    }
+    .value2{
+        margin-left: 6px;
+        margin-top: 20px;
+        width: 270px;
+    }
+    .value3{
+        margin-left: 6px;
+        margin-top: 20px;
+        width: 270px;
+    }
+ 
+}
+

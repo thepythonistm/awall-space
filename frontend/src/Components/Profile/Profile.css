@@ -1,0 +1,139 @@
+.profile-cont{
+    margin-left: 400px;
+    margin-top: 80px;
+    width: 300px;
+    height: 480px;
+    background-color: #FFA725;
+    padding-left: 20px;
+    border-radius: 20px;
+    color: aliceblue;
+    padding-top: 5px;
+}
+.edit-btn{
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: aliceblue;
+    color: #01452b;
+    margin-top: 40px;
+}
+.text-field{
+    width: 250px;
+    height: 70px;
+    outline: none;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.website-ipt{
+    width: 248px;
+    height: 20px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding-left: 5px;
+    letter-spacing: 2px;
+}
+.site-url a {
+    text-decoration: none;
+    color: aliceblue;
+    margin-left: 5px;
+}
+.save-button{
+    width: 256px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #01452b;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+.back-btn{
+    position: absolute;
+    margin-left: -600px;
+    margin-top: -420px;
+    font-size: 45px;
+    background-color: transparent;
+    border: none;
+    color: #FFA725;
+}
+.profile-image {
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: cover;
+}
+.file-input {
+  display: none; 
+}
+
+.image-upload-wrapper {
+  cursor: pointer; 
+  display: inline-block;
+}
+
+.profile-image {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.placeholder-image {
+  width: 120px;
+  height: 120px;
+  background-color: #e2e2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  border: 2px dashed #aaa;
+}
+@media (max-width: 430px) {
+    .profile-cont{
+        margin-left: 45px;
+        width: 320px;
+        height: 560px;
+        margin-top: 140px;
+        font-size: 20px;
+    }
+    .edit-btn{
+        width: 255px;
+        height: 35px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .site-url a {
+        font-size: 14px;
+        text-decoration: none;
+        color: aliceblue;
+    }
+    .text-field{
+        width: 260px;
+        padding-top: 10px;
+        padding-left: 5px;
+        height: 90px;
+    }
+    .website-ipt{
+        width: 260px;
+        letter-spacing: 2px;
+        height: 30px;
+    }
+    .save-button{
+        width: 267px;
+        height: 30px;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+   .back-btn{
+       position: absolute;
+       margin-top: -570px;
+       margin-left: -320px;
+       color: #FFA725;
+   } 
+}

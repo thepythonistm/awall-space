@@ -1,0 +1,304 @@
+body{
+  background: linear-gradient(090deg,#D9EDBF, #FAEDCA);
+  min-height: 100vh;
+}
+.contact-txt{
+    font-size: 26px;
+    margin-left: 40px;
+    color: #FFA725;
+}
+.contact-s{
+    margin-left: 40px;
+    color: #FFA725;
+    letter-spacing: 2.5px;
+}
+
+.contact-form{
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.contact-name{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: solid 1px #FFA725;
+}
+.contact-name::placeholder{
+    padding-left: 5px;
+}
+.contact-email{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: solid 1px ;
+    margin-top: 30px;
+    border: solid 1px #FFA725;
+}
+.contact-email::placeholder{
+    padding-left: 5px;
+}
+.contact-select{
+    width: 204px;
+    height: 25px;
+    border-radius: 10px;
+    border: solid 1px ;
+    margin-top: 10px ;
+    margin-top: 30px;
+    border: solid 1px #FFA725;
+    padding-left: 5px;
+    outline: none;
+}
+.contact-select option {
+    background-color: #FFA725;
+    border: none;
+}
+.contact-content{
+    width: 250px;
+    height: 100px;
+    border-radius: 10px;
+    border: solid 1px ;
+    margin-left: 60px;
+    border: solid 1px #FFA725;
+
+}
+.contact-content::placeholder {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.contact-btn{
+    width: 255px;
+    height: 25px;
+    border-radius: 10px;
+    border: solid 1px ;
+    margin-top: 10px ;
+    margin-left: 60px;
+    background-color: transparent;
+    background-color: #FFA725;
+    border: none;
+    color: #016841;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contact-form{
+    display: flex;
+}
+.line{
+    margin-left: 20px;
+    color: #FFA725;
+}
+.contact-infos{
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.contact-infos strong {
+    color: #6A9C89;
+}
+.sm-txt{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #FFA725;
+}
+.socialmedia-mbl{
+    display: none;
+}
+.socialmedia{
+    margin-left: 20px;
+    margin-top: 60px;
+}
+.socialmedia a {
+    color: #FFA725;
+    margin-left: 30px;
+    font-size: 24px;
+}
+.contact-img img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    
+}
+.contact-img{
+    margin-left: 800px;
+    margin-top: -280px;
+}
+.navigateto{
+    margin-left: 300px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.navigateto strong {
+    color: #FFA725;
+}
+.navigateto small {
+    color: #6A9C89;
+}
+.share-sec{
+    margin-top: 10px;
+}
+.collab-sec{
+    margin-top: -10px;
+}
+.tell-btn{
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    border: solid 1px #6A9C89;
+    border-radius: 5px;
+}
+.collab-btn{
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    border: solid 1px #6A9C89;
+    border-radius: 5px;
+}
+.links-btns{
+    display: flex;
+    margin-top: 20px;
+}
+.sm-icons{
+    margin-top: 20px;
+}
+.contact-mobile{
+    display: none;
+}
+
+.txt{
+    display: none;
+}
+.txt-s{
+    display: none;
+}
+.nav-mobile{
+    display: none;
+}
+
+@media (max-width: 430px){
+    .contact-s{
+
+    }
+    .contact-img img{
+        display: none;
+    }
+    .links-btns{
+        flex-direction: column;
+    }
+    .contact-txt p {
+        margin-left: 30px;
+    }
+    .txt{
+        font-size: 24px;
+        margin-left: 10px;
+        color: #FFA725;
+    }
+    .contact-form{
+        display: none;
+    }
+   .contact-mobile{
+    margin-top: 400px;
+}
+    
+    .text{
+        margin-left: -200px;
+    }
+    .contact-select{
+        margin-left: 10px;
+    }
+    .contact-mobile{
+        display: block;
+        margin-left: 20px;
+    }
+    .contact-mobile input {
+        margin-left: 10px;
+    }
+    .contact-n{
+        margin-top: 20px;
+    }
+    .contact-content{
+        margin-top: 20px;
+        margin-left: 10px;
+        width: 205px;
+    }
+    .contact-btn{
+        margin-left: 10px;
+        width: 210px;
+
+    }
+    .contact-n{
+        width: 200px;
+        height: 25px;
+        border-radius: 10px;
+        border: solid 1px #FFA725;
+        padding-left: 10px;
+    }
+    .contact-e{
+        width: 200px;
+        height: 25px;
+        border-radius: 10px;
+        border: solid 1px #FFA725;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    .contact-slc{
+        width: 205px;
+        height: 25px;
+        border-radius: 10px;
+        border: solid 1px #FFA725;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding-left: 10px;
+
+    }
+    .navigateto{
+        display: none;
+    }
+   .nav-mobile{
+    display: block;
+    margin-left: 30px;
+    margin-top: 20px;
+   }
+   .nav-mobile strong {
+      color: #016841;
+   }
+    .nav-mobile p {
+        color: #016841;
+    }
+    .share-mob {
+        margin-top: 20px;
+    }
+    .tell-btn{
+        width: 150px;
+        height: 30px;
+        color: #FFA725;
+        font-weight: bold;
+        margin-left: 5px;
+        margin-top: -40px;
+    }
+    .collab-btn{
+        width: 150px;
+        height: 30px;
+        margin-left: -5px;
+        color: #FFA725;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+   .socialmedia{
+    display: none;
+   }
+   .socialmedia-mbl{
+    display: block;
+      margin-top: 20px;
+      margin-left: 10px;
+   }
+   .sm-icons{
+    margin-left: 10px;
+   }
+   .sm-icons a {
+    padding-left: 20px;
+    color: #FFA725;
+   }
+
+}

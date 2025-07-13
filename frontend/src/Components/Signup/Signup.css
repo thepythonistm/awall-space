@@ -1,0 +1,110 @@
+.form-img{
+    display: flex;
+    margin-left: 200px;
+
+}
+.signup-img img {
+    max-width: 60%;
+    max-height: 60%;
+    border-radius: 20px;
+    margin-top: -42px;
+    margin-left: 400px;
+}
+.form {
+    margin-top: -60px;
+}
+.callaction{
+    font-size: 30px;
+    color: #FFA725;
+    margin-left: 10px;
+}
+
+.username{
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid 1px #6A9C89;
+    margin-top: 20px;
+    padding-left: 10px;
+
+}
+
+.email{
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid 1px #6A9C89;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.password{
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid 1px #6A9C89;
+    margin-top: 20px;
+    padding-left: 10px;
+
+}
+.password1{
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid 1px #6A9C89;
+    margin-top: 20px;
+    padding-left: 10px;
+
+}
+.signup-btn{
+    width: 306px;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FFA725;
+    color: #034f32;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.signin-txt{
+    font-size: 12px;
+    margin-left: 100px;
+    color: #FFA725;
+}
+.signup-btn:hover{
+    background-color: #fdbb59;
+}
+.options{
+    margin-top: 20px;
+}
+.options button {
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: #C1D8C3;
+    font-weight: bold;
+    cursor: pointer;
+}
+.apple{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.google{
+    margin-left: 20px;
+    font-size: 18px;
+}
+@media (max-width: 430px) {
+    .signup{
+        margin-top: 160px;
+        margin-left: -140px;
+    }
+    .callaction{
+        font-size: 30px;
+    }
+
+}
+
+
