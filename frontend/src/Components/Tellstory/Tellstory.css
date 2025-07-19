@@ -63,6 +63,7 @@
 
   .create-container{
     display: flex;
+    margin-bottom: 40px;
   }
 .gif img {
     max-width: 80%;

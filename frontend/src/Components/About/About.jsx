@@ -1,6 +1,7 @@
 import React from "react";
 import './About.css';
 import Dashboard from "../Dachboard/Dashboard";
+import Footer from "../Footer/Footer";
 const About = () => {
     return(
         <div>
@@ -14,7 +15,6 @@ const About = () => {
                     <p className="who-mobile">AWALL is a space where people, startups, and brands share real stories in a safe and welcoming environment.
                     We’re a digital wall where voices matter—every post is an experience, every reply a real response. Our mission is to connect people through honesty empathy, and shared journeys</p>
                 </div>
-                <img src="./images/Black White Bold Modern Studio Logo.jpg" alt="" />
                 <h3 className="why">Why AWALL🔎</h3>
                 <p className="why-txt">Because authentic experiences matter.
 In a world of noise, filters, and fake reviews <br /> it’s hard to find what’s real. That’s why AWALL exists—to create a platform <br /> where users can speak freely, and others can listen, relate, and learn. <br />
@@ -22,6 +22,8 @@ In a world of noise, filters, and fake reviews <br /> it’s hard to find what�
 Whether you’re a solo user a growing startup or a creative brand <br /> —your story belongs here.</p>
 
             </div>
+            <video className="about-vid" src="./images/5077081-uhd_4096_2160_25fps.mp4" autoPlay loop ></video>
+
             <div>
             <p className="why-mobile">Because authentic experiences matter.
 In a world of noise, filters, and fake reviews it’s hard to find what’s real. That’s why AWALL exists—to create a platform where users can speak freely, and others can listen, relate, and learn.
@@ -43,7 +45,7 @@ Whether you’re a solo user a growing startup or a creative brand —your story
                     <small>Whether you're reflecting <br /> promoting, or inspiring <br /> we give you the tools <br /> to express yourself fully.</small>
                 </div>
             </div>
-
+            <Footer />
 
         </div>
     )

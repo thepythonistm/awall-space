@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Signin.css";
 import apiClient from "../apiClient";
 import Dashboard from "../Dachboard/Dashboard";
+import Footer from "../Footer/Footer";
 const Signin = () => {
     const navigate = useNavigate();
     const[credentials, setCredentials] = useState({
@@ -55,6 +56,7 @@ const Signin = () => {
                 <div className="mobile-img"><img src="./images/vecteezy_wireframe-sign-up-and-log-in-ui-elements_49109257.jpg" alt="" /></div>
             </div>
             </div>
+            <Footer />
 
         </div>
     )

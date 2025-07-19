@@ -3,6 +3,7 @@ import './Tellstory.css';
 import apiClient from '../apiClient';
 import Dashboard from '../Dachboard/Dashboard';
 import { RiVideoUploadFill } from "react-icons/ri";
+import Footer from '../Footer/Footer';
 
 const Tellstory = () => {
   const [tellStory, setTellStory] = useState({ title: '', text: '' });
@@ -158,6 +159,7 @@ const Tellstory = () => {
 
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
