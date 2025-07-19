@@ -3,6 +3,8 @@ import apiClient from '../apiClient';
 import './Profile.css';
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import Footer from "../Footer/Footer";
+
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
@@ -68,7 +70,8 @@ const Profile = () => {
     if (!profile) return <div>Loading...</div>;
 
     return (
-        <div className="profile-cont">
+        <div>
+              <div className="profile-cont">
             <h2 className="profile-header">My Profile</h2>
 
             <label htmlFor="image-upload" className="image-upload-wrapper">
@@ -133,6 +136,9 @@ const Profile = () => {
                 <IoArrowBackCircle />
             </button>
         </div>
+        <Footer />
+        </div>
+    
     );
 };
 

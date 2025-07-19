@@ -5,6 +5,7 @@ import Dashboard from "../Dachboard/Dashboard";
 import apiClient from "../apiClient";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import CommentModal from "../Comment/CommentModal";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -145,6 +146,7 @@ const Home = () => {
                     newComment={newComments[activePost] || ''}
                 />
             )}
+            <Footer />
         </div>
     );
 };

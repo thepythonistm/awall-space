@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaShareAltSquare } from "react-icons/fa";
 import { RxDropdownMenu } from "react-icons/rx";
 import "./Dashboard.css";
-
+import Logout from "../Logout/Logout";
 const Dashboard = () => {
   const[menuOpen, setMenuOpen] = useState(false);
   const handleShare = async () => {
@@ -62,7 +62,7 @@ const Dashboard = () => {
         <button className="share" onClick={handleShare}>
           <FaShareAltSquare />
         </button>
-        <a className="notif" href="#notification"><IoIosNotifications /></a>
+        <div className="logout-button"><Logout /></div>
         <a className="prof-icon" href="/profile"><CgProfile /></a>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import apiClient from "../apiClient";
 import "./Signup.css";
 import Dashboard from "../Dachboard/Dashboard";
+import Footer from "../Footer/Footer";
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -128,6 +129,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+    <Footer />
      </div>
   );
 };

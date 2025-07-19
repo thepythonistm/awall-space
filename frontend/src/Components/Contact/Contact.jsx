@@ -5,6 +5,7 @@ import { FaRedditSquare } from "react-icons/fa";
 import './Contact.css';
 import Dashboard from "../Dachboard/Dashboard";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 const Contact = () => {
     const navigate = useNavigate();
     const handelNavigate = () => {
@@ -100,6 +101,7 @@ We’re here to help</p>
                 <strong>📧 Email: support@awall.com</strong><br />
                 <strong>📱 WhatsApp/Phone: +212-6xx-xxx-xxx</strong>
             </div>
+            <Footer />
 
 
         </div>

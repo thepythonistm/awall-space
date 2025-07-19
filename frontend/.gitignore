@@ -24,3 +24,9 @@ yarn-error.log*
 *.swp
 *.swo
 
+__pycache__/
+*.pyc
+env/
+*.env
+node_modules/
+*.log
