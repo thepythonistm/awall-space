@@ -101,8 +101,9 @@
 }
 @media (max-width: 430px) {
     .signup{
-        margin-top: 160px;
+        margin-top: 60px;
         margin-left: -140px;
+        margin-bottom: 40px;
     }
     .callaction{
         font-size: 30px;

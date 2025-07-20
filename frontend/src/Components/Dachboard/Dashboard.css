@@ -114,6 +114,10 @@
         font-size: 25px;
     }
     .prof-icon{
-        margin-right: 20px;
+    }
+    .share{
+        position: relative;
+        margin-top: 2px;
+        margin-left: 10px;
     }
 }
