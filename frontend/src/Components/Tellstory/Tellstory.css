@@ -105,44 +105,51 @@
   top: -220px;
   margin-left: 600px;
 }
-@media (max-width: 430px) {
-  .form-cont{
-    margin-top: 40px;
-    margin-left: 60px;
+@media (max-width: 600px) {
+  .form-cont {
+    margin-top: 2rem;
+    margin-left: 2rem;
   }
-  .icon-container{
-    width: 300px;
+
+  .icon-container {
+    width: 90%;
     height: 60px;
-    margin-top: 20px;
+    margin-top: 1rem;
     border-radius: 10px;
   }
-  .video-txt{
-    font-size: 12px;
+
+  .video-txt {
+    font-size: 0.9rem;
   }
-  .icon-upload{
-    margin-left: 140px;
+
+  .icon-upload {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
-  .title{
-    width: 300px;
+
+  .title {
+    width: 90%;
     height: 40px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.1rem;
     letter-spacing: 1px;
-    margin-top: 100px;
+    margin-top: 5rem;
   }
-  .textarea{
-    width: 305px;
-    
-  }
-  .share-btn{
-    width: 305px;
-    margin-top: 40px;
-  }
-   .share-btn button {
-      width: 305px;
-      height: 30px;
-   }
 
+  .textarea {
+    width: 90%;
+  }
+
+  .share-btn {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .share-btn button {
+    width: 100%;
+    height: 2rem;
+  }
 }
 
 

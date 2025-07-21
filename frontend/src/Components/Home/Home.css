@@ -1,6 +1,8 @@
 .tellstory {
   background: linear-gradient(090deg,#D9EDBF, #FAEDCA);
   min-height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
 }
 .text{
     margin-left: 40px;
@@ -167,31 +169,29 @@
     margin-top: -5px;
     color: #01452b;
 }
-@media (max-width: 430px) {
-    .text{
-        display: none;
-    }
-    .img-cont{
-        margin-top: 30px;
-        margin-left: -55px;
-    }
-    
-    .text-mobile{
-        display: block;
-    }
-    .text-mobile h1 {
-        margin-top: 20px;
-        margin-left: 20px;
-        color: #6A9C89;
-        font-size: 20px;
-    }
-    .text-mobile p {
-        margin-left: 20px;
-        color: #6A9C89;
-        font-size: 14px;
-    }
-    .buttons{
-        margin-top: 20px;
-        margin-left: -10px;
-    }
+@media (max-width: 600px) {
+  .text h1,
+  .text p {
+    margin-left: 220px;
+  }
+  .text h1{
+    font-size: 24px;
+  }
+
+  .img-cont {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+
+
+  .buttons {
+    margin-top: 20px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
 }
+

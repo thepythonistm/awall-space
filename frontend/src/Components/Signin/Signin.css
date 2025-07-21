@@ -63,31 +63,40 @@
 .mobile-img{
     display: none;
 }
-@media (max-width: 430px) {
-    body {
-    }
+@media (max-width: 600px) {
+   
     .login-txt{
-        font-size: 22px;
+        font-size: 50px;
     }
     .login{
-        margin-top: 100px;
-        margin-left: -140px;
+        margin-top: 60px;
         margin-bottom: 100px;
+        margin-left: -100px;
+    }
+    .login-small{
+        font-size: 22px;
+        letter-spacing: 0.7px;
+    }
+    .username-login{
+        width: 380px;
+        height: 40px;
+    }
+    .password-login{
+        width: 380px;
+        height: 40px;
+    }
+    .submit-btn{
+        width: 391px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 60px;
     }
     .signin-pic{
        display: none;
     }
-    .login-txt{
-        font-size: 30px;
-    }
-    .login-small{
-        font-size: 14px;
-        font-weight: bold;
-    }
-    .form-login input {
-        margin-top: 20px;
-        height: 35px;
-    }
+  
+ 
     .form-login .submit-btn {
         height: 35px;
         font-weight: bold;
