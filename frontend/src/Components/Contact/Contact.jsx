@@ -81,21 +81,9 @@ We’re here to help</p>
                     <div className="share-sec"><small>Want to share a story? ➤</small><button onClick={handelNavigate} className="tell-btn">Tell us</button></div><br />
                     <div className="collab-sec"><small>Have a business proposal or want to collaborate? ➤</small><button className="collab-btn">Collaborate</button></div>
                 </div>
-                <div className="nav-mobile">
-                    <strong>💬 Before your message:</strong><br />
-                    <div className="share-mob"><p className="share-t">Want to share a story? ➤</p><button className="tell-btn">Tell us</button></div><br />
-                    <div className="collab-mob"><p className="coll-t">Want to collaborate? ➤</p><button className="collab-btn">Collaborate</button></div>
-                </div>
+             
             </div>
-            <div className="socialmedia-mbl">
-                    <strong className="sm-txt">Follow us for updates & inspiration📣:</strong><br />
-                    <div className="sm-icons">
-                        <a href=""><RiInstagramFill /></a>
-                        <a href=""><FaSquareXTwitter /></a>
-                        <a href=""><FaRedditSquare /></a>
-                    </div>
-
-             </div>
+          
             <div className="contact-infos">
                 <strong>📍 Location: Casablanca, Morocco</strong><br />
                 <strong>📧 Email: support@awall.com</strong><br />

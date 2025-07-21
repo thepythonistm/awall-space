@@ -5,7 +5,7 @@
 .logo {
     max-width: 15%;
     max-height: 15%;
-    margin-top: -50px;
+    margin-top: -48px;
 }
 .li-items {
     display: flex;
@@ -51,73 +51,88 @@
     background-color: transparent;
     margin-right: 30px;
 }
-@media (max-width: 430px) {
-    .dashboard{
-       
+@media (max-width: 600px) {
+    .logo{
+        margin-top: -20px;
     }
-    .li-items{
-        display: none;
-    }
-    .mobile-menu {
-        display: block;
-        margin-top: 20px;
-    }
-    .dropdown-menu{
-        width: 100px;
-        height: 200px;
-        border-radius: 20px;
-        border: solid 1px #6A9C89;
-        background-color: #6A9C89;
-        margin-left: 20px;
-        margin-top: -2px;
-        position: absolute;
-    }
-    .dropdown-menu ul {
-        width: 60px;
-        height: 200px;
-    }
-    .dropdown-menu li {
-        list-style: none;
-        padding-top: 10px;
-    }
-    .dropdown-menu li a {
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        color: #FFA725;
-    }
+  .dashboard {
+    display: flex;
+  }
 
-    .home-icon{
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: none;
-        background-color: transparent;
-        margin-top: 5px;
-        color: #FFA725;
-        font-size: 34px;
-        font-weight: bold;
+  .li-items {
+    display: none;
+  }
 
-    }
-    .dashboard img {
-        margin-top: -5px;
-        max-width: 22%;
-    }
-    .dash-icons{
-        margin-left: 100px;
-    }
-    .dash-icons button {
-        width: 20px;
-        height: 20px;
-    }
-    .dash-icons a {
-        font-size: 25px;
-    }
-    .prof-icon{
-    }
-    .share{
-        position: relative;
-        margin-top: 2px;
-        margin-left: 10px;
-    }
+  .mobile-menu {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .dropdown-menu {
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    border: 1px solid #6A9C89;
+    background-color: #6A9C89;
+    margin-left: 10px;
+    margin-top: 8px;
+    position: absolute;
+    padding: 10px;
+  }
+
+  .dropdown-menu ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown-menu li {
+    list-style: none;
+    padding: 8px 0;
+  }
+
+  .dropdown-menu li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFA725;
+  }
+
+  .home-icon {
+    width: 34px;
+    height: 34px;
+    background-color: transparent;
+    margin-top: 8px;
+    color: #FFA725;
+    font-size: 32px;
+    border: none;
+  }
+
+  .dashboard img {
+    margin-top: -26px;
+    max-width: 25%;
+  }
+
+  .dash-icons {
+    margin-left: 20px;
+  }
+
+  .dash-icons button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dash-icons a {
+    font-size: 24px;
+  }
+
+  .prof-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .share {
+    position: relative;
+    margin-top: 2px;
+    margin-left: 10px;
+  }
 }

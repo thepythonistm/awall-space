@@ -23,9 +23,12 @@ body{
     height: 25px;
     border-radius: 10px;
     border: solid 1px #FFA725;
+    background-color: transparent;
 }
 .contact-name::placeholder{
     padding-left: 5px;
+        color: #016841;
+
 }
 .contact-email{
     width: 200px;
@@ -34,9 +37,14 @@ body{
     border: solid 1px ;
     margin-top: 30px;
     border: solid 1px #FFA725;
+        background-color: transparent;
+        color: #016841;
+
 }
 .contact-email::placeholder{
     padding-left: 5px;
+        color: #016841;
+
 }
 .contact-select{
     width: 204px;
@@ -48,6 +56,9 @@ body{
     border: solid 1px #FFA725;
     padding-left: 5px;
     outline: none;
+        background-color: transparent;
+        color: #016841;
+
 }
 .contact-select option {
     background-color: #FFA725;
@@ -60,11 +71,15 @@ body{
     border: solid 1px ;
     margin-left: 60px;
     border: solid 1px #FFA725;
+    background-color: transparent;
+     color: #016841;
 
 }
 .contact-content::placeholder {
     padding-left: 10px;
     padding-top: 5px;
+    color: #016841;
+
 }
 .contact-btn{
     width: 255px;
@@ -99,9 +114,6 @@ body{
     margin-left: 20px;
     margin-top: 20px;
     color: #FFA725;
-}
-.socialmedia-mbl{
-    display: none;
 }
 .socialmedia{
     margin-left: 20px;
@@ -176,16 +188,12 @@ body{
     display: none;
 }
 
-@media (max-width: 430px){
-    .contact-s{
+@media (max-width: 600px){
 
-    }
     .contact-img img{
         display: none;
     }
-    .links-btns{
-        flex-direction: column;
-    }
+ 
     .contact-txt p {
         margin-left: 30px;
     }
@@ -198,74 +206,75 @@ body{
         display: none;
     }
    .contact-mobile{
-    margin-top: 400px;
+    margin-top: 350px;
 }
     
     .text{
         margin-left: -200px;
     }
-    .contact-select{
-        margin-left: 10px;
-    }
+  
     .contact-mobile{
         display: block;
         margin-left: 20px;
     }
     .contact-mobile input {
         margin-left: 10px;
+        background-color: transparent;
+        color: #016841;
+        outline: none;
     }
     .contact-n{
         margin-top: 20px;
     }
     .contact-content{
-        margin-top: 20px;
+        width: 305px;
+        margin-top: 10px;
+        margin-left: -10px;
         margin-left: 10px;
-        width: 205px;
+        padding-left: 10px;
     }
     .contact-btn{
         margin-left: 10px;
-        width: 210px;
+        width: 310px;
 
     }
     .contact-n{
-        width: 200px;
+        width: 300px;
         height: 25px;
         border-radius: 10px;
         border: solid 1px #FFA725;
         padding-left: 10px;
     }
+    .contact-n::placeholder{
+        color: #016841;
+    }
     .contact-e{
-        width: 200px;
+        width: 300px;
         height: 25px;
         border-radius: 10px;
         border: solid 1px #FFA725;
         margin-top: 10px;
         padding-left: 10px;
     }
+    .contact-e::placeholder{
+        color: #016841;
+    }
     .contact-slc{
-        width: 205px;
+        width: 311px;
         height: 25px;
         border-radius: 10px;
         border: solid 1px #FFA725;
         margin-top: 10px;
         margin-left: 10px;
         padding-left: 10px;
-
-    }
-    .navigateto{
-        display: none;
-    }
-   .nav-mobile{
-    display: block;
-    margin-left: 30px;
-    margin-top: 20px;
-   }
-   .nav-mobile strong {
-      color: #016841;
-   }
-    .nav-mobile p {
+        background-color: transparent;
         color: #016841;
     }
+  
+   .socialmedia{
+    margin-top: 60px;
+   }
+
     .share-mob {
         margin-top: 20px;
     }
@@ -285,20 +294,16 @@ body{
         font-weight: bold;
         margin-left: 5px;
     }
-   .socialmedia{
-    display: none;
-   }
-   .socialmedia-mbl{
-    display: block;
-      margin-top: 20px;
-      margin-left: 10px;
-   }
-   .sm-icons{
-    margin-left: 10px;
-   }
-   .sm-icons a {
-    padding-left: 20px;
-    color: #FFA725;
-   }
+    .links-btns{
+        flex-direction: column;
+    }
+    .navigateto{
+        margin-left: -5px;
+        margin-left: 40px;
+    }
+    .contact-infos{
+        margin-left: 30px;
+    }
+
 
 }
