@@ -4,7 +4,7 @@ import Dashboard from "../Dachboard/Dashboard";
 import Footer from "../Footer/Footer";
 const About = () => {
     return(
-        <div>
+        <div className="about-wrapper">
             <Dashboard />
             <h1 className="about-txt">AWALL — Where Stories📝 Meet Truth</h1>
             <div className="about-cont">

@@ -124,9 +124,7 @@ const Signup = () => {
           </form>
         </div>
 
-        <div className="signup-img">
-          <img src="./images/registerpagepic.jpg" alt="Signup" />
-        </div>
+      
       </div>
     </div>
     <Footer />

@@ -1,3 +1,7 @@
+
+  body {
+ overflow-x: hidden;
+  min-height: 100vh; }
 .about-vid {
     width: 400px;
     height: auto;
@@ -88,6 +92,12 @@
     display: none;
 }
 @media (max-width: 600px) {
+  .about-wrapper{
+   display: flex;
+  flex-direction: column; 
+      min-height: 100vh;
+
+  }
   .who-mobile,
   .why-mobile {
     display: block;
@@ -130,10 +140,12 @@
   .value1,
   .value2,
   .value3 {
-    margin-left: 70px;
     margin-top: 20px;
-    width: 90%;
-    max-width: 300px;
+    width: 70%;
+  }
+  .value2,
+  .value3{
+    margin-left: -0.5px;
   }
 }
 
