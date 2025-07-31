@@ -172,7 +172,7 @@
 @media (max-width: 600px) {
   .text h1,
   .text p {
-    margin-left: 220px;
+    margin-left: -15px;
   }
   .text h1{
     font-size: 24px;
@@ -180,17 +180,25 @@
 
   .img-cont {
     margin-top: 30px;
-    margin-left: auto;
+    margin-left: -40px;
     margin-right: auto;
     width: fit-content;
   }
 
 
   .buttons {
+    width: 300PX;
     margin-top: 20px;
-    margin-left: 0;
     display: flex;
     justify-content: center;
+    margin-left: 5px;
+  }
+  .tell{
+    margin-left: 15px;
+  }
+  .collab{
+    margin-left: 15px;
+
   }
 
 }

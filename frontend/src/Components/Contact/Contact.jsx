@@ -78,8 +78,8 @@ We’re here to help</p>
                 </div>
                 <div className="navigateto">
                     <strong>💬 Before your message:</strong><br />
-                    <div className="share-sec"><small>Want to share a story? ➤</small><button onClick={handelNavigate} className="tell-btn">Tell us</button></div><br />
-                    <div className="collab-sec"><small>Have a business proposal or want to collaborate? ➤</small><button className="collab-btn">Collaborate</button></div>
+                    <div className="share-sec"><small>Want to share a story? ➤</small><br /><button onClick={handelNavigate} className="tell-btn">Tell us</button></div><br />
+                    <div className="collab-sec"><small>Have a business proposal or want to collaborate? ➤</small><br /><button className="collab-btn">Collaborate</button></div>
                 </div>
              
             </div>
