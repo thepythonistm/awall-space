@@ -78,22 +78,8 @@
     padding: 10px;
   }
 
-  .dropdown-menu ul {
-    padding: 0;
-    margin: 0;
-  }
 
-  .dropdown-menu li {
-    list-style: none;
-    padding: 8px 0;
-  }
-
-  .dropdown-menu li a {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    color: #FFA725;
-  }
+  
 
   .home-icon {
     width: 34px;
