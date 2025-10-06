@@ -47,16 +47,18 @@ const Signup = () => {
 
       const csrftoken = getCookie("csrftoken");
 
-      const response = await apiClient.post(
-        "/user/register/",
-        formData,
-        {
-          headers: {
-            "X-CSRFToken": csrftoken,
-          },
-          withCredentials: true,
-        }
-      );
+    const response = await apiClient.post(
+      "/user/register/",
+    formData,
+    {
+        headers: { 
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrftoken
+        },
+        withCredentials: true,
+    }
+);
+
 
       console.log("Registration successful:", response.data);
       navigate("/signin");
