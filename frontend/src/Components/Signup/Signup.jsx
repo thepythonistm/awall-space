@@ -36,6 +36,9 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("✅ handleSubmit triggered");
+    alert("Form submitted!");
+
     setError({});
     setIsSubmitting(true);
 
@@ -114,7 +117,7 @@ const Signup = () => {
             />
             {error.password1 && <p className="error-message">{error.password1}</p>}<br />
 
-            <button className="signup-btn" type="submit" disabled={isSubmitting}>
+            <button className="signup-btn" type="submit" >
               {isSubmitting ? "Signing up..." : "Sign Up"}
             </button><br />
 
