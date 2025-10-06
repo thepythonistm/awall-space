@@ -60,10 +60,19 @@ const Signup = () => {
 
       console.log("Registration successful:", response.data);
       navigate("/signin");
-    } catch (error) {
-      console.error("Registration error:", error.response?.data || error.message);
-      setError(error.response?.data || { non_field_errors: ["Registration failed. Please try again."] });
-    } finally {
+    } 
+    catch (error) {
+      if (error.response) {
+        console.error("Registration error data:", error.response.data);
+        console.error("Registration error status:", error.response.status);
+        console.error("Registration error headers:", error.response.headers);
+        setError(error.response.data || { non_field_errors: ["Registration failed."] });
+  } else {
+    console.error("Registration error:", error.message);
+  }
+}
+
+    finally {
       setIsSubmitting(false);
     }
   };
