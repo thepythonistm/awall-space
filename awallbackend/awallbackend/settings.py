@@ -2,20 +2,21 @@ from pathlib import Path
 from datetime import timedelta
 from decouple import config, Csv
 import dj_database_url 
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 DEBUG = False
-ALLOWED_HOSTS = ["https://awall-space-gvc3.vercel.app"]
+ALLOWED_HOSTS = ["awall-space.onrender.com", "awall-space-gvc3-8y991mfwj-pythonistms-projects.vercel.app"]
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1048576000
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1048576000
 
 DATABASES = {
     'default': dj_database_url.parse(
-        config('DATABASE_URL', default='postgresql://postgres:postgres@localhost:5432/your_db_name'),
+        config('DATABASE_URL', default='postgresql://postgres:postgres@localhost:5432/awalldb'),
         conn_max_age=600
     )
 }
@@ -57,19 +58,10 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = config(
-    'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000',
-    cast=Csv()
-)
+CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS", "").split(",")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = config(
-    'CSRF_TRUSTED_ORIGINS',
-    default='http://localhost:3000',
-    cast=Csv()
-)
-CORS_ALLOW_CREDENTIALS = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
