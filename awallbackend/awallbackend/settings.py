@@ -1,8 +1,8 @@
+import os
 from pathlib import Path
 from datetime import timedelta
-from decouple import config, Csv
-import dj_database_url 
-import os
+from decouple import config
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -57,9 +57,16 @@ MIDDLEWARE = [
     'csp.middleware.CSPMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://awall-space-gvc3-8y991mfwj-pythonistms-projects.vercel.app",
+    "http://localhost:3000"
+]
 
-CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS", "").split(",")
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+CSRF_TRUSTED_ORIGINS = [
+    "https://awall-space-gvc3-8y991mfwj-pythonistms-projects.vercel.app",
+    "http://localhost:3000"
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
@@ -112,8 +119,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_STYLE_SRC = ("'self'", "'unsafe-inline'") 
-CSP_SCRIPT_SRC = ("'self'",) 
-CSP_IMG_SRC = ("'self'", "data:")  
-CSP_CONNECT_SRC = ("'self'", 'https://awall-space-gvc3.vercel.app/',)
+CONTENT_SECURITY_POLICY = {
+    "DIRECTIVES": {
+        "default-src": ("'self'",),
+        "style-src": ("'self'", "'unsafe-inline'"),
+        "script-src": ("'self'",),
+        "img-src": ("'self'", "data:"),
+        "connect-src": (
+            "'self'",
+            "https://awall-space-gvc3-8y991mfwj-pythonistms-projects.vercel.app",
+        ),
+    }
+}
