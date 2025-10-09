@@ -7,44 +7,42 @@ import Footer from "../Footer/Footer";
 
 const Signin = () => {
   const navigate = useNavigate();
-  const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
-  });
+  const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    const { username, password } = credentials;
-
-    try {
-      const response = await apiClient.post("/user/login/", { username, password });
-      const accessToken = response.data.access;
-      const refreshToken = response.data.refresh;
-
-      if (accessToken && refreshToken) {
-        localStorage.setItem("access_token", accessToken);
-        localStorage.setItem("refresh_TOKEN", refreshToken);
-        apiClient.defaults.headers["authorization"] = `Bearer ${accessToken}`;
-        navigate("/");
-      } else {
-        setError("Token not received, try again");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setError(error.response?.data?.detail || "Login failed, please try again");
-    }
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await apiClient.post("/user/login/", credentials, { withCredentials: true });
+      const { access, refresh } = response.data;
+
+      if (access && refresh) {
+        localStorage.setItem("access_token", access);
+        localStorage.setItem("refresh_token", refresh);
+        apiClient.defaults.headers["Authorization"] = `Bearer ${access}`;
+        navigate("/");
+      } else {
+        setError("Token not received, please try again.");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError(err.response?.data?.detail || "Login failed, please check your credentials.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="login-container">
       <Dashboard />
-
       <div className="login">
         <h1 className="login-txt">Welcome back 👋</h1>
         <p className="login-small">Dive into real stories, real experiences</p>
@@ -55,40 +53,28 @@ const Signin = () => {
               type="text"
               name="username"
               onChange={handleChange}
+              value={credentials.username}
               className="username-login"
               placeholder="Username"
+              required
             />
             <input
               type="password"
               name="password"
               onChange={handleChange}
+              value={credentials.password}
               className="password-login"
               placeholder="Password"
+              required
             />
-            <button type="submit" className="submit-btn">Signin</button>
-          </form>
-                    <form onSubmit={handleSubmit} className="form-login1">
-            <input
-              type="text"
-              name="username"
-              onChange={handleChange}
-              className="username-login1"
-              placeholder="Username"
-            />
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              className="password-login1"
-              placeholder="Password"
-            />
-            <button type="submit" className="submit-btn1">Signin</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? "Signing in..." : "Sign In"}
+            </button>
           </form>
         </div>
-        
+
         {error && <p className="login-error">{error}</p>}
       </div>
-
       <Footer />
     </div>
   );
