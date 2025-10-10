@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from .models import Profile
-
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -13,18 +13,21 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         if data['password'] != data['password1']:
-            raise serializers.ValidationError("Passwords do not match.")
+            raise serializers.ValidationError({"password": "Passwords do not match."})
         return data
 
     def create(self, validated_data):
         validated_data.pop('password1')
-        user = User(
-            username=validated_data['username'],
-            email=validated_data.get('email')
-        )
-        user.set_password(validated_data['password'])
-        user.save()
+        try:
+            user = User.objects.create_user(
+                username=validated_data['username'],
+                email=validated_data.get('email'),
+                password=validated_data['password']
+            )
+        except IntegrityError:
+            raise serializers.ValidationError({"username": "This username is already taken."})
         return user
+
 class ProfileSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)
     email = serializers.EmailField(source='user.email', read_only=True)
