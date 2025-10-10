@@ -1,22 +1,19 @@
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.response import Response
-from rest_framework import status
-from .serializers import RegisterSerializer
-from rest_framework.permissions import AllowAny
-from django.http import JsonResponse
-from django.views.decorators.csrf import ensure_csrf_cookie
-from rest_framework.decorators import api_view
-from django.contrib.auth.models import User
-from rest_framework import generics, permissions
-from .models import Profile
-from .serializers import ProfileSerializer
-from rest_framework.generics import RetrieveUpdateAPIView
-from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.generics import RetrieveUpdateAPIView
+from .serializers import RegisterSerializer, ProfileSerializer
+from .models import Profile
 
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
@@ -29,10 +26,20 @@ class RegisterView(generics.CreateAPIView):
             return Response({"message": "User registered successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@ensure_csrf_cookie
+@csrf_exempt
 @api_view(['GET'])
 def get_csrf_token(request):
-    return JsonResponse({'message': 'CSRF cookie set'})
+    """
+    Returns a CSRF cookie if frontend wants to use session-based auth.
+    CSRF exempt so preflight OPTIONS works.
+    """
+    response = JsonResponse({'message': 'CSRF cookie set'})
+    response["Access-Control-Allow-Origin"] = "https://awall-space-gvc3.vercel.app"
+    response["Access-Control-Allow-Credentials"] = "true"
+    response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+    response["Access-Control-Allow-Headers"] = "Content-Type, X-CSRFToken"
+    return response
+
 
 class ProfileView(RetrieveUpdateAPIView):
     serializer_class = ProfileSerializer
@@ -51,12 +58,15 @@ class ProfileView(RetrieveUpdateAPIView):
         serializer.save()
         return Response(serializer.data)
 
+
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
         try:
-            refresh_token = request.data["refresh"]
+            refresh_token = request.data.get("refresh")
+            if not refresh_token:
+                return Response({"error": "Refresh token is required"}, status=400)
             token = RefreshToken(refresh_token)
             token.blacklist()
             return Response({"message": "Logout successful."}, status=200)
