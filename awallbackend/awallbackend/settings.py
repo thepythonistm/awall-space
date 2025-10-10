@@ -66,6 +66,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://awall-space-gvc3.vercel.app",
+    "https://awall-space.onrender.com",  
     "http://localhost:3000",
 ]
 
