@@ -64,29 +64,26 @@ MIDDLEWARE = [
     'csp.middleware.CSPMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
     "https://awall-space-gvc3.vercel.app",
-    "https://awall-space.onrender.com",  
-    "http://localhost:3000",
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
     "https://awall-space-gvc3.vercel.app",
-    "https://awall-space.onrender.com",  
 ]
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
+CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-csrftoken',
-    'x-requested-with',
+]
+
+CORS_EXPOSE_HEADERS = [
+    'Content-Type',
+    'X-CSRFToken',
+    'Authorization',
 ]
 
 REST_FRAMEWORK = {
