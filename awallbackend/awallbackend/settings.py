@@ -13,7 +13,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "awall-space.onrender.com",
-    "awall-story-space.vercel.app",
+    "awall-space-ui.onrender.com",
     "localhost",
     "127.0.0.1",
 ]
