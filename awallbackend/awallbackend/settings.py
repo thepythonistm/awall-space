@@ -75,9 +75,11 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://awall-space-ui.onrender.com",
+    "https://awall-space.onrender.com",
+
 ]
 
-CORS_ALLOW_CREDENTIALS = False
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-csrftoken',
@@ -116,15 +118,15 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CONTENT_SECURITY_POLICY = {
-    "DIRECTIVES": {
-        "default-src": ("'self'",),
-        "style-src": ("'self'", "'unsafe-inline'"),
-        "script-src": ("'self'", "'unsafe-inline'"),
-        "img-src": ("'self'", "data:"),
-        "connect-src": (
+    'DIRECTIVES': {
+        'default-src': ("'self'",),
+        'style-src': ("'self'", "'unsafe-inline'", "https://awall-space-ui.onrender.com"),
+        'script-src': ("'self'", "'unsafe-inline'", "https://awall-space-ui.onrender.com"),
+        'img-src': ("'self'", "data:", "https://awall-space-ui.onrender.com"),
+        'connect-src': (
             "'self'",
-            "https://awall-space-ui.onrender.com",
             "https://awall-space.onrender.com",
+            "https://awall-space-ui.onrender.com",
         ),
     }
 }
