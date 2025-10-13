@@ -69,15 +69,16 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
-    "https://awall-space-gvc3.vercel.app",
+    "https://awall-space-ui.onrender.com",
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://awall-space-gvc3.vercel.app",
+    "https://awall-space-ui.onrender.com",
 ]
 
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = False
+
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-csrftoken',
 ]
@@ -122,7 +123,7 @@ CONTENT_SECURITY_POLICY = {
         "img-src": ("'self'", "data:"),
         "connect-src": (
             "'self'",
-            "https://awall-space-gvc3.vercel.app",
+            "https://awall-space-ui.onrender.com",
             "https://awall-space.onrender.com",
         ),
     }
