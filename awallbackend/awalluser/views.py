@@ -29,16 +29,13 @@ class RegisterView(generics.CreateAPIView):
 @csrf_exempt
 @api_view(['GET'])
 def get_csrf_token(request):
-    """
-    Returns a CSRF cookie if frontend wants to use session-based auth.
-    CSRF exempt so preflight OPTIONS works.
-    """
     response = JsonResponse({'message': 'CSRF cookie set'})
-    response["Access-Control-Allow-Origin"] = "https://awall-space-gvc3.vercel.app"
+    response["Access-Control-Allow-Origin"] = "https://awall-space-ui.onrender.com"
     response["Access-Control-Allow-Credentials"] = "true"
     response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
     response["Access-Control-Allow-Headers"] = "Content-Type, X-CSRFToken"
     return response
+
 
 
 class ProfileView(RetrieveUpdateAPIView):
