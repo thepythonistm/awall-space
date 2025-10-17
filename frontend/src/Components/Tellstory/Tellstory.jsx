@@ -2,17 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Tellstory.css';
 import apiClient from '../apiClient';
 import Dashboard from '../Dachboard/Dashboard';
-import { RiVideoUploadFill } from "react-icons/ri";
 import Footer from '../Footer/Footer';
+import { AudioRecorder } from "react-audio-voice-recorder";
+import Voicerecorder from '../Voicerecorder/Voicerecorder';
 
 const Tellstory = () => {
   const [tellStory, setTellStory] = useState({ title: '', text: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
-  const [uploadPercent, setUploadPercent] = useState(0);
   const textareaRef = useRef(null);
   const inputRef = useRef(null);
-  const [videoFile, setVideoFile] = useState(null);
 
   const handleIconClick = () => {
     if (inputRef.current) {
@@ -20,12 +19,7 @@ const Tellstory = () => {
     }
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setVideoFile(file);
-    }
-  };
+
 
   useEffect(() => {
     const textarea = textareaRef.current;
@@ -46,7 +40,6 @@ const Tellstory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setUploadPercent(0);
     const token = localStorage.getItem('access_token');
     if (!token) {
       setMessage('Unauthorized: Please log in first.');
@@ -57,24 +50,18 @@ const Tellstory = () => {
     const formData = new FormData();
     formData.append('title', tellStory.title);
     formData.append('content', tellStory.text);
-    if (videoFile) {
-      formData.append('video', videoFile);
-    }
+  
 
     try {
       await apiClient.post('create/posts/', formData, {
   headers: {
     Authorization: `Bearer ${token}`
   },
-  onUploadProgress: (progressEvent) => {
-    const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-    setUploadPercent(percent);
-  },
+
 });
 
       setMessage('Your story was added successfully.');
       setTellStory({ title: '', text: '' });
-      setVideoFile(null);
     } catch (error) {
       console.error('Error response:', error.response);
       setMessage(
@@ -88,8 +75,9 @@ const Tellstory = () => {
   };
 
   return (
+    <>
     <div className='tellstory'>
-      <Dashboard />
+          <Dashboard />
       <div className='create-container'>
         <div className='form-cont'>
           <form onSubmit={handleSubmit}>
@@ -119,34 +107,12 @@ const Tellstory = () => {
                 }}
               />
             </div>
-                      <input
-            type="file"
-            accept="video/*"
-            className="video-upload"
-            ref={inputRef}
-            onChange={handleFileChange}
-            style={{ display: 'none' }}
-          />
+      
 
-          <div className='icon-container'>
-            <RiVideoUploadFill className='icon-upload' onClick={handleIconClick} />
-            <p className='video-txt'>Upload your story video here (maximum 10 min)</p>
+          <div>
+            <Voicerecorder />
           </div>
-
-          {uploadPercent > 0 && (
-            <div className="upload-progress">
-              <div className="upload-bar" style={{ width: `${uploadPercent}%` }} />
-            </div>
-          )}
-          <div className='video-prev' >
-            {videoFile && (
-            <video  width="320" controls style={{ marginTop: '15px' }}>
-              <source src={URL.createObjectURL(videoFile)} type={videoFile.type} />
-              Your browser does not support the video tag.
-            </video>
-          )}
-          </div>
-
+      
           <div className='share-btn'>
             <button type='submit' disabled={isSubmitting}>
               {isSubmitting ? 'Sharing...' : 'Share'}
@@ -161,6 +127,7 @@ const Tellstory = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 

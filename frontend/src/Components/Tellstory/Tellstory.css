@@ -49,13 +49,13 @@
   }
   .share-btn button {
      background-color: #FFA725;
-     margin-top: 100px;
+     margin-top: 20px;
      border: none;
      width: 405px;
      height: 30px;
      border-radius: 10px;
      font-weight: bold;
-     color: #01432a;
+     color: black;
      letter-spacing: 5px;
      font-size: 16px;
 
@@ -74,37 +74,8 @@
 }
 
 
-.video-upload{
-  display: none;
-}
-.icon-upload{
-  margin-left: 180px;
-  padding-top: 50px;
-  color: #01432a;
-  font-size: 30px;
-  margin-top: -48px;
-}
-.icon-container{
-  position: absolute;
-  width: 407px;
-  height: 60px;
-  background-color: #FFA725;
-  border-radius: 20px;
-  margin-top: 20px;
-}
-.video-txt{
-  font-size: 14px;
-  font-weight: bold;
-  padding-left: 3px;
-  color: #01432a;
-  text-align: center;
-  margin-top: -2px;
-}
-.video-prev {
-  position: relative;
-  top: -220px;
-  margin-left: 600px;
-}
+
+
 @media (max-width: 600px) {
   .create-container{
     margin-left: -60px;

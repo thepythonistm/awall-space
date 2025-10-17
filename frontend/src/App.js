@@ -11,6 +11,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Profile from './Components/Profile/Profile';
 import Logout from './Components/Logout/Logout';
+import Voicerecorder from './Components/Voicerecorder/Voicerecorder';
 
 function App() {
   return (
@@ -24,8 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/logout" element={<Logout />} />
-
-
+        <Route path="/voicerecorder" element={<Voicerecorder />} />
       </Routes>
     </Router>
   );
