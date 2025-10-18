@@ -11,9 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = True
 
+IS_PRODUCTION = not config('DJANGO_DEBUG', default='True') == 'True'
+
 ALLOWED_HOSTS = [
-    "awall-space.onrender.com",
-    "awall-space-ui.onrender.com",
+    "055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
+    "055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
     "localhost",
     "127.0.0.1",
 ]
@@ -24,9 +26,9 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 1048576000
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL'),
+        default=config('DATABASE_URL', default='postgresql://awall_user:password@localhost:5432/awall_db'),
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=not DEBUG 
     )
 }
 
@@ -71,13 +73,12 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
-    "https://awall-space-ui.onrender.com",
+    "https://055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://awall-space-ui.onrender.com",
-    "https://awall-space.onrender.com",
+    "https://055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
 
 ]
 
