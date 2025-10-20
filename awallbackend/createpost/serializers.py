@@ -24,22 +24,13 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = [
-            'id',
-            'content',            
-            'video',
-            'created_at',
-            'author',
-            'comments',
-            'reactions_count'
-        ]
+        fields = ['id', 'author', 'content', 'audio', 'created_at', 'comments', 'reactions_count']
 
     def get_reactions_count(self, obj):
         return {
             "likes": obj.reactions.filter(is_like=True).count(),
             "dislikes": obj.reactions.filter(is_like=False).count()
         }
-
 class ReactionSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
     class Meta:

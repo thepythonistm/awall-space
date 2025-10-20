@@ -24,6 +24,7 @@ body{
     border-radius: 10px;
     border: solid 1px #FFA725;
     background-color: transparent;
+    outline: none;
 }
 .contact-name::placeholder{
     padding-left: 5px;
@@ -39,7 +40,7 @@ body{
     border: solid 1px #FFA725;
         background-color: transparent;
         color: #016841;
-
+    outline: none;
 }
 .contact-email::placeholder{
     padding-left: 5px;
@@ -56,8 +57,8 @@ body{
     border: solid 1px #FFA725;
     padding-left: 5px;
     outline: none;
-        background-color: transparent;
-        color: #016841;
+    background-color: transparent;
+    color: #016841;
 
 }
 .contact-select option {
@@ -73,7 +74,7 @@ body{
     border: solid 1px #FFA725;
     background-color: transparent;
      color: #016841;
-
+    outline: none;
 }
 .contact-content::placeholder {
     padding-left: 10px;
@@ -270,6 +271,7 @@ body{
         padding-left: 10px;
         background-color: transparent;
         color: #016841;
+        outline: none;
     }
   
    .socialmedia{

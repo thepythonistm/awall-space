@@ -4,10 +4,12 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 
 from .models import *
+from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
 from .serializers import PostSerializer, CommentSerializer, ReactionSerializer
 from django.shortcuts import get_object_or_404
 
 class PostListCreateAPIView(generics.ListCreateAPIView):
+    parser_classes = [JSONParser, MultiPartParser, FormParser] 
     queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
     permission_classes=[permissions.IsAuthenticatedOrReadOnly]
@@ -21,6 +23,18 @@ class PostRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     Lookup_field = 'id'
+
+class PostDeleteView(generics.DestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_destroy(self, instance):
+        if instance.author != self.request.user:
+            from rest_framework.exceptions import PermissionDenied
+            raise PermissionDenied("You can only delete your own posts.")
+        instance.delete()
+        
 class CommentListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes=[permissions.IsAuthenticatedOrReadOnly]

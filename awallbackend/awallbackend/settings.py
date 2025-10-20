@@ -14,8 +14,6 @@ DEBUG = True
 IS_PRODUCTION = not config('DJANGO_DEBUG', default='True') == 'True'
 
 ALLOWED_HOSTS = [
-    "055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
-    "055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
     "localhost",
     "127.0.0.1",
 ]
@@ -23,13 +21,15 @@ ALLOWED_HOSTS = [
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1048576000
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1048576000
 
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='postgresql://awall_user:password@localhost:5432/awall_db'),
-        conn_max_age=600,
-        ssl_require=not DEBUG 
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+    }
 }
 
 SIMPLE_JWT = {
@@ -73,16 +73,20 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
-    "https://055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
-]
-
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://055b06f2-5ee3-49d8-8c38-a862dbf73a92.e1-us-east-azure.choreoapps.dev",
-
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-csrftoken',
@@ -123,16 +127,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CONTENT_SECURITY_POLICY = {
     'DIRECTIVES': {
         'default-src': ("'self'",),
-        'style-src': ("'self'", "'unsafe-inline'", "https://awall-space-ui.onrender.com"),
-        'script-src': ("'self'", "'unsafe-inline'", "https://awall-space-ui.onrender.com"),
-        'img-src': ("'self'", "data:", "https://awall-space-ui.onrender.com"),
-        'connect-src': (
-            "'self'",
-            "https://awall-space.onrender.com",
-            "https://awall-space-ui.onrender.com",
-        ),
+        'style-src': ("'self'", "'unsafe-inline'"),
+        'script-src': ("'self'", "'unsafe-inline'"),
+        'img-src': ("'self'", "data:"),
+        'connect-src': ("'self'",),
     }
 }
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

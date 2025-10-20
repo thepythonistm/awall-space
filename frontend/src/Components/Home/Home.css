@@ -131,14 +131,14 @@
     color: #01452b;
 }
 .comment-submit-btn{
-    width: 60px;
-    height: 30px;
+    width: 80px;
     border: none;
     background-color: #FFA725;
     color: #01452b;
     border-radius: 15px;
     margin-left: 20px;
     font-weight: bold;
+    margin-top: -2px;
 }
 .story-p{
     color: #6A9C89;
@@ -160,14 +160,42 @@
   display: block;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+.com-del{
+    display: flex;
+}
 .comment-icon-btn{
-    margin-left: 120px;
-    width: 60px;
-    border: none;
-    background-color: transparent;
-    font-size: 30px;
-    margin-top: -5px;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #FFA725;
     color: #01452b;
+    border: none;
+    font-weight: bold;
+}
+.delete-post-btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFA725;
+    color: #01452b;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.audio-home{
+    width: 260px;
+    height: 30px;
+}
+.audio-home::-webkit-media-controls-panel {
+  background-color: #FFA725;
+  border-radius: 15px;
+}
+
+
+.audio-home::-webkit-media-controls-current-time-display,
+.audio-home::-webkit-media-controls-time-remaining-display {
+  color: #01452b;
+  font-weight: bold;
 }
 @media (max-width: 600px) {
   .text h1,

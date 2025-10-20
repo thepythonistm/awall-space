@@ -61,17 +61,18 @@
     color: #034f32;
     letter-spacing: 3.5px;
     font-weight: 1000;
-    margin-left: 50px;
+    margin-left: 45px;
     margin-top: 40px;
   }
   .login-small{
     color: #034f32;
-    margin-left: 50px;
+    margin-left: 45px;
     margin-top: -20px;
     letter-spacing: 0.5px;
   }
   .form-login{
-    display: none;
+      margin-left: 20px;
+      margin-top: 20px;
   }
   .form-login1{
      display: flex;

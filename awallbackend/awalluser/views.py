@@ -9,8 +9,9 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.generics import RetrieveUpdateAPIView
-from .serializers import RegisterSerializer, ProfileSerializer
+from .serializers import *
 from .models import Profile
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -69,3 +70,5 @@ class LogoutView(APIView):
             return Response({"message": "Logout successful."}, status=200)
         except Exception as e:
             return Response({"error": str(e)}, status=400)
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer

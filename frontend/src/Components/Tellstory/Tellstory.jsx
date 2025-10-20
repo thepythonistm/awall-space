@@ -12,6 +12,8 @@ const Tellstory = () => {
   const [message, setMessage] = useState('');
   const textareaRef = useRef(null);
   const inputRef = useRef(null);
+  const [audioBlob, setAudioBlob] = useState(null);
+
 
   const handleIconClick = () => {
     if (inputRef.current) {
@@ -50,18 +52,26 @@ const Tellstory = () => {
     const formData = new FormData();
     formData.append('title', tellStory.title);
     formData.append('content', tellStory.text);
-  
+    if (audioBlob) {
+      formData.append('audio', audioBlob, 'voice_story.mp3');
+    }
+
 
     try {
       await apiClient.post('create/posts/', formData, {
   headers: {
-    Authorization: `Bearer ${token}`
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "multipart/form-data",
+
   },
+
 
 });
 
       setMessage('Your story was added successfully.');
       setTellStory({ title: '', text: '' });
+      setAudioBlob(null);
+
     } catch (error) {
       console.error('Error response:', error.response);
       setMessage(
@@ -73,6 +83,7 @@ const Tellstory = () => {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <>
@@ -110,7 +121,7 @@ const Tellstory = () => {
       
 
           <div>
-            <Voicerecorder />
+          <Voicerecorder onAudioReady={setAudioBlob} />
           </div>
       
           <div className='share-btn'>

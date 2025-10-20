@@ -81,6 +81,30 @@ const Home = () => {
         setActivePost(null);
         setComments([]);
     };
+    const handleDeletePost = async (postId) => {
+  const token = localStorage.getItem('access_token');
+  
+  if (!token) {
+    alert("You must be logged in to delete posts.");
+    return;
+  }
+
+  if (!window.confirm("Are you sure you want to delete this post?")) return;
+
+  try {
+    await apiClient.delete(`create/posts/delete/${postId}/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    alert("Post deleted successfully!");
+    setPosts((prev) => prev.filter((p) => p.id !== postId)); 
+  } catch (error) {
+    console.error(error);
+    alert("Failed to delete post.");
+  }
+};
+
 
     return (
         <div>
@@ -108,26 +132,33 @@ const Home = () => {
                             const isExpanded = expandedPosts[post.id];
                             const showToggle = post.content.length > 100;
                             const displayContent = isExpanded ? post.content : post.content.slice(0, 100);
+                            const currentUser = localStorage.getItem('username');
 
                             return (
                                 <div key={post.id} className={`story-post ${isExpanded ? "expanded" : ""}`}>
                                     <p className="story-p"><strong>{post.author.username}</strong></p>
                                     <p className="content-p">{displayContent}</p>
                                     <small className="time">{new Date(post.created_at).toLocaleString()}</small>
-                                    {post.video && (
-                                        <video className="video" controls>
-                                            <source src={post.video} type="mp4" />
-                                        </video>
-                                    )}
+                               
 
                                     {showToggle && (
                                         <button className="read-more-btn" onClick={() => toggleReadMore(post.id, post.content)}>
                                             {isExpanded ? "Read Less" : "Read More"}
                                         </button>
                                     )}
-
+                                    {post.audio && (
+                                        <audio className="audio-home" controls>
+                                        <source src={post.audio} type="audio/mpeg" />
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    )}
+                                    <div className="com-del">
                                     <div className="comment-btn-area">
-                                        <button onClick={() => fetchComments(post.id)} className="comment-icon-btn">💬</button>
+                                        <button onClick={() => fetchComments(post.id)} className="comment-icon-btn">comments</button>
+                                    </div>
+                                    {post.author.username === currentUser && (
+                                        <button onClick={() => handleDeletePost(post.id)} className="delete-post-btn" >Delete🗑️</button>
+                                    )}
                                     </div>
                                 </div>
                             );

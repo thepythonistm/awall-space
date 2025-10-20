@@ -92,7 +92,8 @@
   justify-content: center;
   color: #888;
   font-size: 14px;
-  border: 2px dashed #aaa;
+  border: 2px dashed #01452b;
+  border-radius: 50%;
 }
 @media (max-width: 430px) {
     .profile-cont{

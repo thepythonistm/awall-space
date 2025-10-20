@@ -22,11 +22,12 @@ const Signin = () => {
 
     try {
       const response = await apiClient.post("/user/login/", credentials, { withCredentials: true });
-      const { access, refresh } = response.data;
+      const { access, refresh, username } = response.data;
 
       if (access && refresh) {
         localStorage.setItem("access_token", access);
         localStorage.setItem("refresh_token", refresh);
+        localStorage.setItem("username", username);
         apiClient.defaults.headers["Authorization"] = `Bearer ${access}`;
         navigate("/");
       } else {

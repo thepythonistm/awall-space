@@ -6,9 +6,10 @@ import { RxDropdownMenu } from "react-icons/rx";
 import "./Dashboard.css";
 import Logout from "../Logout/Logout";
 const Dashboard = () => {
+  const username = localStorage.getItem('username');
   const[menuOpen, setMenuOpen] = useState(false);
   const handleShare = async () => {
-    const currentURL = window.location.href;
+  const currentURL = window.location.href;
 
     if (navigator.share) {
       try {
@@ -30,6 +31,15 @@ const Dashboard = () => {
       }
     }
   };
+  
+  const handleClick = (e) => {
+    
+    if (!username) {
+      e.preventDefault(); 
+      alert("You are not registered yet! Please register first.");
+    }
+  };
+
 
   return (
     <div className="dashboard">
@@ -63,7 +73,7 @@ const Dashboard = () => {
           <FaShareAltSquare />
         </button>
         <div className="logout-button"><Logout /></div>
-        <a className="prof-icon" href="/profile"><CgProfile /></a>
+        <a className="prof-icon" href="/profile" onClick={handleClick}><CgProfile /></a>
       </div>
     </div>
   );
